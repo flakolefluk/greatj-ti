@@ -1,0 +1,25 @@
+@use '../fns';
+
+.card {
+    background: white;
+    border: fns.scale(15) solid transparent;
+    padding: fns.scale(50) fns.scale(12);
+
+    &:hover {
+        background: #07C06A;
+    }
+
+    &:hover > button:not(:disabled) {
+        background-color: var(--hover-color);
+    }
+}
+
+.border {
+    &:hover{
+        background: white;
+        border-color: #07C06A;
+    }
+}
+
+
+

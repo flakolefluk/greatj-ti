@@ -1,0 +1,86 @@
+@use '../fns';
+
+.root {
+    background: var(--primary-color);
+    max-width: 1680px;
+    // min-width: 768px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: fns.scale(50) fns.scale(85) fns.scale(85) fns.scale(85);
+
+    svg {
+        flex-shrink: 0;
+    }
+
+    button>svg {
+        margin-inline-end: fns.scale(8);
+    }
+
+    h1 {
+        font-size: fns.scale(60);
+        font-weight: 400;
+        line-height: 1.1;
+        letter-spacing: 0px;
+        text-align: left;
+        color: white;
+        margin-bottom: fns.scale(22);
+    }
+
+    hr {
+        opacity: 0.2;
+        background: #FFFFFF;
+        size: 1px;
+    }
+}
+
+.header {
+    margin-inline-end: calc(fns.scale(12) * -1);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, calc(25% - (fns.scale(18) * 3) / 4));
+    gap: fns.scale(18);
+    min-height: fns.scale(662);
+    margin-block-start: fns.scale(50);
+
+    // beyond the requirements
+    @media (max-width:767px) {
+        grid-template-columns: repeat(2, calc(50% - 18px / 2));
+    }
+}
+
+.grid>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    &:nth-child(1) {
+        justify-content: center;
+        grid-row: span 2;
+
+        // beyond the requirements
+        @media (max-width:767px) {
+            grid-row: span 1;
+            grid-column: span 2;
+        }
+    }
+
+    &:nth-child(n+2):nth-child(-n+4) {
+        justify-content: center;
+    }
+}
+
+.icon {
+    height: fns.scale(22);
+    width: fns.scale(22);
+}
+
+.close-icon {
+    height: fns.scale(44);
+    width: fns.scale(44);
+}

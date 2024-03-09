@@ -1,0 +1,11 @@
+@function minValue($n) {
+    @return calc($n*768/1680)
+};
+
+@function slope($n) {
+    @return calc(($n - minValue($n)) / (1680 - 768))
+};
+
+@function scale($n) {
+    @return clamp(#{minValue($n)}px, #{slope($n)*100}vw, $n * 1px);
+};

@@ -1,0 +1,52 @@
+@use '../fns';
+
+.button {
+    border-radius: fns.scale(70);
+    min-height: fns.scale(70);
+    border: 2px solid #FFFFFF;
+    font-size: fns.scale(19);
+    font-weight: 600;
+    line-height: fns.scale(24);
+    letter-spacing: -0.5px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #2D3E4E;
+    font-family: "Open Sans";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: fns.scale(11) fns.scale(27);
+    width: 100%;
+
+    &:hover:not(:disabled) {
+        background-color: #07C06A;
+    }
+
+    &:disabled {
+        background-color: #AAAAAA;
+    }
+
+    >span {
+        box-sizing: border-box;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        text-overflow: clip;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+.icon-button {
+    svg {
+        margin-inline-end: fns.scale(16);
+    }
+
+    >span {
+        -webkit-line-clamp: 2;
+        white-space: wrap;
+        text-overflow: ellipsis;
+    }
+
+}
